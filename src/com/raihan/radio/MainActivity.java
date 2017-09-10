@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 public class MainActivity extends Activity {
 	private WebView mWebView;
+	
 	/** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -36,4 +37,10 @@ public class MainActivity extends Activity {
         }
         return false;
     }
+
+	@Override
+	protected void onDestroy() {
+		mWebView = null;
+		super.onDestroy();
+	}
 }
