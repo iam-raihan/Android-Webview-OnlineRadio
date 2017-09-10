@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+
+    <body align="center">
+
+    	<div style="background-color: #3498db">
+    		<h1>Listen Radio Online !!</h1>
+    	</div>
+
+        <button onclick="getRadio(1)">Radio 1</button>
+        <button onclick="getRadio(2)"">Radio 2</button>
+        <button onclick="getRadio(3)"">Radio 3</button>
+
+    	<div id="radioDiv" style="display: none">
+    		<h3 id="radioName"></h3>
+            <img id="radioPic" height="80px" width="160px" src="">
+            <div id="radioStream"></div>
+            <button id="radioStop" onclick="removeRadio()">Stop</button>
+    	</div>
+        
+        <script type="text/javascript">
+            function getRadio(id){
+                if(id == 1){
+                    document.getElementById('radioName').innerHTML = "Radio Foorti :";
+                    document.getElementById('radioPic').src = "pics/foortiFM.jpg";
+                    document.getElementById('radioStream').innerHTML = '<video controls="false" autoplay="true" name="media" width="303" height="40"__idm_id__="82004993"><source src="http://119.148.23.88:1021/;stream/1" type="audio/mpeg"></video>';
+
+                }
+                if(id == 2){
+                    document.getElementById('radioName').innerHTML = "Friends Fm :";
+                    document.getElementById('radioPic').src = "pics/friendsFM.png";
+                    document.getElementById('radioStream').innerHTML = '<video controls="false" autoplay="true" name="media" width="303" height="40"__idm_id__="82004993"><source src="http://188.166.176.244:8919/;" type="audio/mpeg"></video>';
+
+                }
+                if(id == 3){
+                    document.getElementById('radioName').innerHTML = "Radio Today Fm :";
+                    document.getElementById('radioPic').src = "pics/todayFM.jpg";
+                    document.getElementById('radioStream').innerHTML = '<video controls="false" autoplay="true" name="media" width="303" height="40" __idm_id__="867821569"><source src="http://stream.zenolive.com/8wv4d8g4344tv" type="audio/mpeg"></video>';
+
+                }
+
+                document.getElementById('radioDiv').style.display = 'block';
+            }
+
+            function removeRadio(){
+                document.getElementById('radioDiv').style.display = 'none';
+                document.getElementById('radioStream').innerHTML = '';       
+            }                    
+         </script>
+    </body>
+</html>
