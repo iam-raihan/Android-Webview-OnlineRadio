@@ -23,7 +23,8 @@ public class MainActivity extends Activity {
         	mWebView = (WebView)findViewById(R.id.webView1);
             
             mWebView.getSettings().setJavaScriptEnabled(true);
-            mWebView.loadUrl("file:///android_asset/index.html");	
+            mWebView.loadUrl("file:///android_asset/index.html");
+            mWebView.addJavascriptInterface(new Interface(), "Android");
         }
     }
     

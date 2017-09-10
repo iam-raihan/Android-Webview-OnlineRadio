@@ -21,25 +21,10 @@
     	</div>
         
         <script type="text/javascript">
-            function getRadio(id){
-                if(id == 1){
-                    document.getElementById('radioName').innerHTML = "Radio Foorti :";
-                    document.getElementById('radioPic').src = "pics/foortiFM.jpg";
-                    document.getElementById('radioStream').innerHTML = '<video controls="false" autoplay="true" name="media" width="303" height="40"__idm_id__="82004993"><source src="http://119.148.23.88:1021/;stream/1" type="audio/mpeg"></video>';
-
-                }
-                if(id == 2){
-                    document.getElementById('radioName').innerHTML = "Friends Fm :";
-                    document.getElementById('radioPic').src = "pics/friendsFM.png";
-                    document.getElementById('radioStream').innerHTML = '<video controls="false" autoplay="true" name="media" width="303" height="40"__idm_id__="82004993"><source src="http://188.166.176.244:8919/;" type="audio/mpeg"></video>';
-
-                }
-                if(id == 3){
-                    document.getElementById('radioName').innerHTML = "Radio Today Fm :";
-                    document.getElementById('radioPic').src = "pics/todayFM.jpg";
-                    document.getElementById('radioStream').innerHTML = '<video controls="false" autoplay="true" name="media" width="303" height="40" __idm_id__="867821569"><source src="http://stream.zenolive.com/8wv4d8g4344tv" type="audio/mpeg"></video>';
-
-                }
+            function getRadio(id){                
+                document.getElementById('radioName').innerHTML = Android.radioName(id);
+                document.getElementById('radioPic').src = Android.radioPic(id);
+                document.getElementById('radioStream').innerHTML = Android.radioStream(id);
 
                 document.getElementById('radioDiv').style.display = 'block';
             }
